@@ -1,11 +1,11 @@
 <?php
 
-namespace fieldwork\colourswatches\models;
+namespace fieldwork\colorswatches\models;
 
 use craft\base\Model;
 
 class Settings extends Model
 {
-    public $colours = [];
+    public $colors = [];
     public $palettes = [];
 }

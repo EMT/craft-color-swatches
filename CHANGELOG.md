@@ -1,4 +1,4 @@
-# Colour Swatches Changelog
+# Color Swatches Changelog
 
 All notable changes to this project will be documented in this file.
 
@@ -14,30 +14,30 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## 1.2.0 - 2019-02-01
 ### Added
-- Added the possibility to define the colours in a config file and have the field use them.
+- Added the possibility to define the colors in a config file and have the field use them.
 
 ## 1.1.4 - 2018-07-30
 ### Fixed
-- Fix a JS error when deselecting the colour
+- Fix a JS error when deselecting the color
 - Default value is now correctly filled
 - Removed focus outline from buttons
 
 ## 1.1.3 - 2018-06-28
 ### Changed
-- Improve design for colours when selecting light colours.
+- Improve design for colors when selecting light colors.
 
 ## 1.1.2 - 2018-05-21
 ### Added
-- Colours are now parse for references so you can add globals.
+- Colors are now parse for references so you can add globals.
 
 ## 1.1.1 - 2018-05-21
 ### Changed
-- New design for the colours thanks to @skramstad
-- Colours can now be unchecked
+- New design for the colors thanks to @skramstad
+- Colors can now be unchecked
 
 ## 1.1.0 - 2018-04-05
 ### Added
-- Added the possibility to split the colours by using `;`, which allows for `rgba()` colours to be defined.
+- Added the possibility to split the colors by using `;`, which allows for `rgba()` colors to be defined.
 
 ### Changed
 - Now requires Craft CMS 3.0.0
@@ -48,7 +48,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## 1.0.5 - 2018-02-11
 ### Fixed
-- Fixes an error when saving a draft and having a colour field inside a matrix
+- Fixes an error when saving a draft and having a color field inside a matrix
 
 ## 1.0.4 - 2018-01-24
 ### Fixed

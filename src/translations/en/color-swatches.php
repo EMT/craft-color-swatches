@@ -2,7 +2,7 @@
 /**
  * color-swatches plugin for Craft CMS 3.x.
  *
- * Let clients choose from a predefined set of colours.
+ * Let clients choose from a predefined set of colors.
  *
  * @link      https://rias.be
  *

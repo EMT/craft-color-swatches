@@ -3,12 +3,12 @@
 /**
  * color-swatches plugin for Craft CMS
  *
- * ColourSwatches Field Settings
+ * ColorSwatches Field Settings
  *
  * @author    Rias
  * @copyright Copyright (c) 2018 Rias
  * @link      https://rias.be
- * @package   Colour Swatches
+ * @package   Color Swatches
  * @since     1.0.0
  */
 #}
@@ -16,8 +16,8 @@
 {% import "_includes/forms" as forms %}
 
 {{ forms.lightswitchField({
-    label: 'Use config options'|t('colour-swatches'),
-    instructions: 'Whether to use the config options or palettes defined in `colour-swatches.php` or a custom config.'|t('colour-swatches'),
+    label: 'Use config options'|t('color-swatches'),
+    instructions: 'Whether to use the config options or palettes defined in `color-swatches.php` or a custom config.'|t('color-swatches'),
     name: 'useConfigFile',
     on: field.useConfigFile,
     toggle: 'preview',
@@ -25,8 +25,8 @@
 }) }}
 
 {{ forms.lightswitchField({
-    label: 'Allow selecting multiple colours'|t('colour-swatches'),
-    instructions: 'Users can select multiple colours.'|t('colour-swatches'),
+    label: 'Allow selecting multiple colors'|t('color-swatches'),
+    instructions: 'Users can select multiple colors.'|t('color-swatches'),
     name: 'allowMultiple',
     on: field.allowMultiple,
 }) }}
@@ -39,7 +39,7 @@
 
     <div class="field {{ paletteOptions|length > 1 ? '' : 'hidden' }}">
         {{ forms.selectField({
-            label: 'Palette'|t('colour-swatches'),
+            label: 'Palette'|t('color-swatches'),
             name: 'palette',
             options: paletteOptions,
             value: field.palette ? field.palette : null,
@@ -55,7 +55,7 @@
     {# Default config options #}
     <div id="palette-" class="color-swatches {{ field.useConfigFile and not field.palette ? '' : 'hidden' }}">
         {% for option in configOptions %}
-            {% include 'colour-swatches/colourOption' with {
+            {% include 'color-swatches/colorOption' with {
                 optionId: '1-option-' ~ loop.index,
                 option: option,
             } %}
@@ -73,7 +73,7 @@
         {% set defaultValue = null %}
         <div id="palette-{{ key }}" class="color-swatches {{ condition ? '' : 'hidden' }}">
             {% for option in palette %}
-                {% include 'colour-swatches/colourOption' with {
+                {% include 'color-swatches/colorOption' with {
                     optionId: '1-option-' ~ loop.index,
                     option: option,
                 } %}

@@ -2,14 +2,14 @@
 /**
  * color-swatches plugin for Craft CMS 3.x.
  *
- * Let clients choose from a predefined set of colours.
+ * Let clients choose from a predefined set of colors.
  *
  * @link      https://rias.be
  *
  * @copyright Copyright (c) 2018 Rias
  */
 
-namespace fieldwork\colourswatches\assetbundles\colourswatchesfield;
+namespace fieldwork\colorswatches\assetbundles\colorswatchesfield;
 
 use Craft;
 use craft\web\AssetBundle;
@@ -20,7 +20,7 @@ use craft\web\assets\cp\CpAsset;
  *
  * @since     1.0.0
  */
-class ColourSwatchesFieldAsset extends AssetBundle
+class ColorSwatchesFieldAsset extends AssetBundle
 {
     // Public Methods
     // =========================================================================
@@ -30,18 +30,18 @@ class ColourSwatchesFieldAsset extends AssetBundle
      */
     public function init()
     {
-        $this->sourcePath = '@fieldwork/colourswatches/assetbundles/colourswatchesfield/dist';
+        $this->sourcePath = '@fieldwork/colorswatches/assetbundles/colorswatchesfield/dist';
 
         $this->depends = [
             CpAsset::class,
         ];
 
         $this->css = [
-            'css/ColourSwatches.css',
+            'css/ColorSwatches.css',
         ];
 
         $this->js = [
-            'js/ColourSwatches.js',
+            'js/ColorSwatches.js',
         ];
 
         parent::init();
