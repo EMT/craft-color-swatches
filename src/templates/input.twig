@@ -1,0 +1,34 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * color-swatches plugin for Craft CMS 3.x
+ *
+ * ColorSwatches Field Input
+ *
+ * @author    Rias
+ * @copyright Copyright (c) 2018 Rias
+ * @link      https://rias.be
+ * @package   Color Swatches
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% set defaultValue = null %}
+{% set options = field.useConfigFile ? field.palette ? palettes[field.palette] : configOptions : field.options %}
+<div id="{{ id }}" class="color-swatches {% if field.allowMultiple %}js-multiple{% endif %}">
+    {% for option in options %}
+        {% include 'color-swatches/colorOption' with {
+            optionId: namespacedId ~ '-option-' ~ loop.index,
+            option: option,
+        } %}
+    {% endfor %}
+</div>
+
+<input
+  id="{{ namespacedId }}"
+  type="hidden"
+  name="{{ name }}"
+  value="{{ defaultValue ?? fieldValue.values | json_encode }}"
+/>

@@ -1,0 +1,25 @@
+{% set value = {
+  label: option.label,
+  color: option.color,
+} %}
+
+{% set isActive = (
+  (
+    not fieldValue is defined
+    or (
+      fieldValue is defined and not fieldValue.colors | length
+    )
+  )
+  or (
+    fieldValue is defined
+    and option.color in fieldValue.colors
+  )
+) %}
+
+<button
+  type="button"
+  title="{{ option.label }}"
+  data-value="{{ value | json_encode }}"
+  class="option {% if isActive %}active{% endif %}"
+  style="background: {{ value.color | parseRefs | raw }};"
+></button>
