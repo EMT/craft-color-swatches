@@ -1,6 +1,6 @@
 <?php
 
-namespace rias\colourswatches\models;
+namespace fieldwork\colourswatches\models;
 
 use craft\base\Model;
 

@@ -1,5 +1,5 @@
 {
-  "name": "rias/craft-color-swatches",
+  "name": "fieldwork/craft-color-swatches",
   "description": "Let clients choose from a predefined set of colors.",
   "type": "craft-plugin",
   "keywords": [
@@ -10,8 +10,8 @@
     "color-swatches"
   ],
   "support": {
-    "docs": "https://github.com/Rias500/craft-color-swatches/blob/master/README.md",
-    "issues": "https://github.com/Rias500/craft-color-swatches/issues"
+    "docs": "https://github.com/emt/craft-color-swatches/blob/master/README.md",
+    "issues": "https://github.com/emt/craft-color-swatches/issues"
   },
   "license": "MIT",
   "authors": [
@@ -25,7 +25,7 @@
   },
   "autoload": {
     "psr-4": {
-      "rias\\colorswatches\\": "src/"
+      "fieldwork\\colorswatches\\": "src/"
     }
   },
   "extra": {
@@ -34,7 +34,7 @@
     "schemaVersion": "1.0.0",
     "hasCpSettings": false,
     "hasCpSection": false,
-    "changelogUrl": "https://raw.githubusercontent.com/Rias500/craft-color-swatches/master/CHANGELOG.md",
-    "class": "rias\\colorswatches\\ColorSwatches"
+    "changelogUrl": "https://raw.githubusercontent.com/emt/craft-color-swatches/master/CHANGELOG.md",
+    "class": "fieldwork\\colorswatches\\ColorSwatches"
   }
 }

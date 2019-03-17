@@ -9,7 +9,7 @@
  * @copyright Copyright (c) 2018 Rias
  */
 
-namespace rias\colourswatches\assetbundles\colourswatchesfield;
+namespace fieldwork\colourswatches\assetbundles\colourswatchesfield;
 
 use Craft;
 use craft\web\AssetBundle;
@@ -30,7 +30,7 @@ class ColourSwatchesFieldAsset extends AssetBundle
      */
     public function init()
     {
-        $this->sourcePath = '@rias/colourswatches/assetbundles/colourswatchesfield/dist';
+        $this->sourcePath = '@fieldwork/colourswatches/assetbundles/colourswatchesfield/dist';
 
         $this->depends = [
             CpAsset::class,

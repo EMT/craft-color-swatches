@@ -1,6 +1,6 @@
 <?php
 
-namespace rias\colorswatches\models;
+namespace fieldwork\colorswatches\models;
 
 class ColorSwatches
 {

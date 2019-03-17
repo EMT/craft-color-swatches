@@ -9,14 +9,14 @@
  * @copyright Copyright (c) 2018 Rias
  */
 
-namespace rias\colorswatches\fields;
+namespace fieldwork\colorswatches\fields;
 
 use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
-use rias\colorswatches\assetbundles\colorswatchesfield\ColorSwatchesFieldAsset;
-use rias\colorswatches\ColorSwatches as Plugin;
-use rias\colorswatches\models\ColorSwatches as ColorSwatchesModel;
+use fieldwork\colorswatches\assetbundles\colorswatchesfield\ColorSwatchesFieldAsset;
+use fieldwork\colorswatches\ColorSwatches as Plugin;
+use fieldwork\colorswatches\models\ColorSwatches as ColorSwatchesModel;
 use yii\db\Schema;
 
 /**

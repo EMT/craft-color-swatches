@@ -9,14 +9,14 @@
  * @copyright Copyright (c) 2018 Rias
  */
 
-namespace rias\colorswatches;
+namespace fieldwork\colorswatches;
 
 use Craft;
 use craft\base\Plugin;
 use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
-use rias\colorswatches\fields\ColorSwatches as ColorSwatchesField;
-use rias\colorswatches\models\Settings;
+use fieldwork\colorswatches\fields\ColorSwatches as ColorSwatchesField;
+use fieldwork\colorswatches\models\Settings;
 use yii\base\Event;
 
 /**
