@@ -4,19 +4,14 @@
 } %}
 
 {% set isActive = (
-  (
-    not fieldValue is defined
-    or (
-      fieldValue is defined and not fieldValue.colors | length
-    )
-  )
-  or (
-    fieldValue is defined
-    and option.color in fieldValue.colors
-  )
+  fieldValue is defined
+  and option.color in fieldValue.colors
 ) %}
 
 <button
+  data-field-value="{{ dump(fieldValue) }}"
+  data-field-value-colors="{{ dump(fieldValue.colors) }}"
+  data-option="{{ dump(option) }}"
   type="button"
   title="{{ option.label }}"
   data-value="{{ value | json_encode }}"

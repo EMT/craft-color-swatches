@@ -30,10 +30,6 @@ class ColorSwatches
   public function colors()
   {
     return array_map(function($val) {
-      if (!is_object($val)) {
-
-        var_dump($val);
-        }
       return $val->color;
     }, $this->values);
   }
@@ -66,10 +62,6 @@ class ColorSwatch
         $this->color = $value['color'];
       }
       else {
-        if (!is_object($value)) {
-
-        var_dump($value);
-        }
         $this->label = $value->label;
         $this->color = $value->color;
       }

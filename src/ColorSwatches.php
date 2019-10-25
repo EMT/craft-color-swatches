@@ -14,9 +14,15 @@ namespace fieldwork\colorswatches;
 use Craft;
 use craft\base\Plugin;
 use craft\events\RegisterComponentTypesEvent;
+use craft\events\RegisterGqlDirectivesEvent;
+use craft\services\Gql;
 use craft\services\Fields;
 use fieldwork\colorswatches\fields\ColorSwatches as ColorSwatchesField;
+use fieldwork\colorswatches\types\ColorSwatches as ColorSwatchesType;
+use fieldwork\colorswatches\directives\FirstColor;
+use fieldwork\colorswatches\directives\ColorsList;
 use fieldwork\colorswatches\models\Settings;
+use GraphQL\Type\Definition\Type;
 use yii\base\Event;
 
 /**
@@ -28,57 +34,45 @@ use yii\base\Event;
  */
 class ColorSwatches extends Plugin
 {
-    // Static Properties
-    // =========================================================================
+  // Static Properties
+  // =========================================================================
 
-    /**
-     * @var ColorSwatches
-     */
-    public static $plugin;
+  /**
+   * @var ColorSwatches
+   */
+  public static $plugin;
 
-    // Public Methods
-    // =========================================================================
+  // Public Methods
+  // =========================================================================
 
-    /**
-     * {@inheritdoc}
-     */
-    public function init()
-    {
-        parent::init();
-        self::$plugin = $this;
+  /**
+   * {@inheritdoc}
+   */
+  public function init()
+  {
+    parent::init();
+    self::$plugin = $this;
 
-        Event::on(
-            Fields::class,
-            Fields::EVENT_REGISTER_FIELD_TYPES,
-            function (RegisterComponentTypesEvent $event) {
-                $event->types[] = ColorSwatchesField::class;
-            }
-        );
+    Event::on(
+      Fields::class,
+      Fields::EVENT_REGISTER_FIELD_TYPES,
+      function ( RegisterComponentTypesEvent $event ) {
+        $event->types[] = ColorSwatchesField::class;
+      }
+    );
 
-        Event::on(
-          ColorSwatchesField::class,
-          'craftQlGetFieldSchema',
-          function ( \markhuot\CraftQL\Events\GetFieldSchema $event ) {
-            $event->handled = true;
+    Event::on(
+      Gql::class,
+      Gql::EVENT_REGISTER_GQL_DIRECTIVES,
+      function( RegisterGqlDirectivesEvent $event ) {
+        $event->directives[] = FirstColor::class;
+        $event->directives[] = ColorsList::class;
+      }
+    );
+  }
 
-            $event->schema
-              ->addStringField( $event->sender )
-              ->lists()
-              ->resolve( function( $root, $args ) {
-                $colors = [];
-
-                foreach ( $root->colors->values as $color ) {
-                  $colors[] = $color->color;
-                }
-
-                return $colors;
-              } );
-          }
-        );
-    }
-
-    protected function createSettingsModel()
-    {
-        return new Settings();
-    }
+  protected function createSettingsModel()
+  {
+    return new Settings();
+  }
 }
