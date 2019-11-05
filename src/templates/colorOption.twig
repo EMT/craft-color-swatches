@@ -9,9 +9,6 @@
 ) %}
 
 <button
-  data-field-value="{{ dump(fieldValue) }}"
-  data-field-value-colors="{{ dump(fieldValue.colors) }}"
-  data-option="{{ dump(option) }}"
   type="button"
   title="{{ option.label }}"
   data-value="{{ value | json_encode }}"
